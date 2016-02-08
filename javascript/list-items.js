@@ -41,12 +41,12 @@
     comparator: function (a, b) {
 
       var res = this.compare(this.isMaster, a, b);
-      if (res != null) {
+      if (FourthWall.getQueryVariable('master_top') && res != null) {
         return res;
       }
 
       res = this.compare(this.isThumbsUp, a, b);
-      if (res != null) {
+      if (FourthWall.getQueryVariable('thumbs') && res != null) {
         return res;
       }
 

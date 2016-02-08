@@ -33,6 +33,9 @@ Optional query parameters:
  - `listinterval`: Update interval for the list of monitored repos in seconds (default: 900)
  - `interval`: Update interval for monitored repos in seconds (default: 60)
  - `filterusers`: Only show PRs from specific users, if set in config (default: false)
+ - `master_top`: Keeps master branch failures on top of the list
+ - `thumbs_up`: Keeps PRs that have thumbs up at the top of the list
+ - `recent`: Shows the newest PRs in top of the list. The default behavior is oldest PRs on top
 
 The Gist should contain one or more JSON files with this syntax:
 ```json
