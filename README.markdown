@@ -8,13 +8,14 @@ Pure client-side pull request and build status monitor for GitHub repositories.
 
 ## How to use
 
-The project is hosted through Github pages:
-`http://fundingcircle.github.io/fourth-wall/?token=_token_&team=_org_/_team_`
+The project is hosted through Github pages:  
+`http://fundingcircle.github.io/fourth-wall/?token=TOKEN&team=ORG/TEAM`
 
-You will need a Github API token with read access to the relevant repositories.
-Visit https://github.com/settings/tokens and create a new personal access token.
-If any repositories are private, the token needs `repo` scope.
-To use the `team` parameter, the token also needs `read:org` scope.
+You will need a Github API token with read access to the relevant repositories:
+
+1. Visit https://github.com/settings/tokens and create a new personal access token
+1. Use `public_repo` scope if all repositories are public, otherwise use `repo` scope  
+1. To use the `team` parameter, the token also needs `read:org` scope
 
 The following query parameters are required:
 
@@ -75,7 +76,7 @@ Examples:
 * A list of repos and custom CSS for the [Mainstream team](https://gist.github.com/norm/7248264)
 * A list of repos, custom CSS and users for the [Core team](https://gist.github.com/issyl0/70cf0c8f3d0b1ccd2f6e)
 
-## Support for other githubs
+## Support for GitHub Enterprise
 
 If you use github enterprise you must add the `baseUrl` to each repo object and
 add a token for that hostname. The url parameter for the other hostname should
