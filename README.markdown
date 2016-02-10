@@ -2,31 +2,31 @@
 
 [![Build Status](https://travis-ci.org/alphagov/fourth-wall.png)](https://travis-ci.org/alphagov/fourth-wall)
 
-Pure client-side pull request and build status monitor for Github repositories.
+Pure client-side pull request and build status monitor for GitHub repositories.
 
 ![Screenshot of Fourth Wall](https://cloud.githubusercontent.com/assets/355033/6211416/6341db4e-b5d1-11e4-99d2-57b80a400a41.png)
 
 ## How to use
 
 The project is hosted through Github pages:
-`http://alphagov.github.io/fourth-wall/?token=_token_&gist=_gist_id_`
+`http://fundingcircle.github.io/fourth-wall/?token=_token_&team=_org_/_team_`
 
-You will need to have a Github API token with access to the relevant
-repositories if you don't already have one. To do that, visit
-https://github.com/settings/applications and create a new personal
-access token. To use the `team` parameter you will need to give the token
-the `read:org` permission.
+You will need a Github API token with read access to the relevant repositories.
+Visit https://github.com/settings/tokens and create a new personal access token.
+If any repositories are private, the token needs `repo` scope.
+To use the `team` parameter, the token also needs `read:org` scope.
 
 The following query parameters are required:
 
  - `token`: Your Github API token
 
-At least one of:
+And at least one of:
 
- - `gist`: ID of the Gist containing the list of repositories to monitor.
- - `team`: Github organisation and team name to build the list of repositories in the form `{org}/{team}` (requires the [`read:org`](https://developer.github.com/v3/orgs/) permission).
- - `team[]`: Given multiple times allows for more than one team to be used to build the list of repositories.
- - `file`: URL of a file in a Github repo that contains the list of repositories.
+ - `gist`: ID of the Gist containing the list of repositories to monitor
+ - `team`: GitHub organisation and team name to build the list of repositories; in the form `org/team`
+   - Requires [`read:org`](https://developer.github.com/v3/orgs/) scope on the token
+ - `team[]`: Given multiple times allows for more than one team to be used to build the list of repositories
+ - `file`: URL of a file in a Github repo that contains the list of repositories
 
 Optional query parameters:
 
@@ -35,7 +35,7 @@ Optional query parameters:
  - `filterusers`: Only show PRs from specific users, if set in config (default: false)
  - `master_top`: Keeps master branch failures on top of the list
  - `thumbs_up`: Keeps PRs that have thumbs up at the top of the list
- - `recent`: Shows the newest PRs in top of the list. The default behavior is oldest PRs on top
+ - `recent`: Shows the newest PRs in top of the list (default behavior is oldest PRs on top)
 
 The Gist should contain one or more JSON files with this syntax:
 ```json
