@@ -9,7 +9,7 @@ Pure client-side pull request and build status monitor for GitHub repositories.
 ## How to use
 
 The project is hosted through Github pages:  
-`http://fundingcircle.github.io/fourth-wall/?token=TOKEN&team=ORG/TEAM`
+`https://fundingcircle.github.io/fourth-wall/?token=TOKEN&team=ORG/TEAM`
 
 You will need a Github API token with read access to the relevant repositories:
 
